@@ -67,7 +67,7 @@
         {
             do
             {
-                var keypress = Console.ReadKey();
+                var keypress = Console.ReadKey(true);
                 if (keypress.Key == ConsoleKey.UpArrow)
                 {
                     //TODO: implementera rörelsefunktion
