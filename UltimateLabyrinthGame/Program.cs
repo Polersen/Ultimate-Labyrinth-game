@@ -1,9 +1,5 @@
 ﻿namespace UltimateLabyrinthGame
 {
-    class items
-    {
-        public bool isKey, isWeapon;
-    }
     internal class Program
     {
         
