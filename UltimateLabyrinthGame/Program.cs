@@ -1,6 +1,7 @@
 ﻿namespace UltimateLabyrinthGame
 {
 
+
     public class UltimateLabyrinth
     {
         static Room help = new Room(-1, "Help",  // Rename what buttons to press.
@@ -49,11 +50,6 @@
 
 
         };
-    }
-
-    class items
-    {
-        public bool isKey, isWeapon;
     }
 
     internal class Program
