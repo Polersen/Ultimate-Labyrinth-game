@@ -4,6 +4,10 @@
     {
         static void Main(string[] args)
         {
+            MovementLoop();
+        }
+        public static void MovementLoop()
+        {
             do
             {
                 var keypress = Console.ReadKey();
