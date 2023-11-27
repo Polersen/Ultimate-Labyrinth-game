@@ -55,9 +55,17 @@
     {
         public bool isKey, isWeapon;
     }
-           List<items> inventory= new List<items>();
+
+    internal class Program
+    {
+
+        public static void Main(string[] args)
+        {
+
+            List<items> inventory = new List<items>();
             MovementLoop();
         }
+
         public static void MovementLoop()
         {
             do
