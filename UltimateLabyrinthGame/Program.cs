@@ -1,10 +1,15 @@
 ﻿namespace UltimateLabyrinthGame
 {
+    class items
+    {
+        public bool isKey, isWeapon;
+    }
     internal class Program
     {
+        
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            List<items> inventory= new List<items>();
         }
     }
 }
