@@ -5,14 +5,15 @@
     public class UltimateLabyrinth
     {
         static Room help = new Room(-1, "Help",  // Rename what buttons to press.
-              "Följande kommandon finns:\n" +
-              "  w - gå genom dörren norrut\n" +
-              "  s - gå genom dörren söderut\n" +
-              "  d - gå genom dörren österut\n" +
-              "  a - gå genom dörren västerut\n" +
-              "  l - leta\n" +
-              "  h - hjälp\n" +
-              "  z - avsluta\n",
+              "Keybindings:\n" +
+              "  Arrow forward - walk forward\n" +
+              "  Arrow down - walk back\n" +
+              "  Arrow right - walk right\n" +
+              "  Arrow left - walk left\n" +
+              "  e - Search\n" +
+              "  f - Use item \n" +
+              "  h - Help\n" +
+              "  Esc - End program\n",
               Room.NoDoor, Room.NoDoor, Room.NoDoor, Room.NoDoor);
 
         static List<Room> description = new List<Room>()
@@ -70,22 +71,22 @@
                 if (keypress.Key == ConsoleKey.UpArrow)
                 {
                     //TODO: implementera rörelsefunktion
-                    Console.WriteLine("Gå upp");
+                    Console.WriteLine("Walk forward");
                 }
                 else if (keypress.Key == ConsoleKey.DownArrow)
                 {
                     //TODO: implementera rörelsefunktion
-                    Console.WriteLine("Gå ner");
+                    Console.WriteLine("Walk back");
                 }
                 else if (keypress.Key == ConsoleKey.LeftArrow)
                 {
                     //TODO: implementera rörelsefunktion
-                    Console.WriteLine("Gå Vänster");
+                    Console.WriteLine("Walk left");
                 }
                 else if (keypress.Key == ConsoleKey.RightArrow)
                 {
                     //TODO: implementera rörelsefunktion
-                    Console.WriteLine("Gå höger");
+                    Console.WriteLine("Walk right");
                 }
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
