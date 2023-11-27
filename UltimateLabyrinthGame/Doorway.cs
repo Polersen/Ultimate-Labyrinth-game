@@ -24,6 +24,7 @@ namespace UltimateLabyrinthGame {
 
         public void Enter() {
             // TODO: Set player position to this room.
+            Console.WriteLine("TODO");
         }
 
         public bool CanEnter() {
