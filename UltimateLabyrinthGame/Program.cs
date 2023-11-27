@@ -1,5 +1,6 @@
 ﻿namespace UltimateLabyrinthGame
 {
+
     public class UltimateLabyrinth
     {
         static Room help = new Room(-1, "Help",  // Rename what buttons to press.
@@ -50,17 +51,44 @@
         };
     }
 
-    internal class Program
+    class items
     {
-       
-
-        static void Main(string[] args)
+        public bool isKey, isWeapon;
+    }
+           List<items> inventory= new List<items>();
+            MovementLoop();
+        }
+        public static void MovementLoop()
         {
-            
-
-
-
-
+            do
+            {
+                var keypress = Console.ReadKey();
+                if (keypress.Key == ConsoleKey.UpArrow)
+                {
+                    //TODO: implementera rörelsefunktion
+                    Console.WriteLine("Gå upp");
+                }
+                else if (keypress.Key == ConsoleKey.DownArrow)
+                {
+                    //TODO: implementera rörelsefunktion
+                    Console.WriteLine("Gå ner");
+                }
+                else if (keypress.Key == ConsoleKey.LeftArrow)
+                {
+                    //TODO: implementera rörelsefunktion
+                    Console.WriteLine("Gå Vänster");
+                }
+                else if (keypress.Key == ConsoleKey.RightArrow)
+                {
+                    //TODO: implementera rörelsefunktion
+                    Console.WriteLine("Gå höger");
+                }
+                else if (keypress.Key == ConsoleKey.Escape)
+                {
+                    break;
+                }
+            }
+            while (true);
         }
     }
 }
