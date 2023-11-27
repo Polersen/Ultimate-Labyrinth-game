@@ -4,7 +4,7 @@
 
     public class UltimateLabyrinth
     {
-        static Room help = new Room(-1, "Help",  // Rename what buttons to press.
+        public static Room help = new Room(-1, "Help",  // Rename what buttons to press.
               "Keybindings:\n" +
               "  Arrow forward - walk forward\n" +
               "  Arrow down - walk back\n" +
@@ -16,11 +16,11 @@
               "  Esc - End program\n",
               Room.NoDoor, Room.NoDoor, Room.NoDoor, Room.NoDoor);
 
-        static List<Room> description = new List<Room>()
+        public static List<Room> description = new List<Room>()
         {
             new Room(0,"Start", "Titel på rummet\n" +
                 "Lägg till beskrivning på rum.",
-                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
+                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor).AddItem("Skull Key", "A key with an ingrained skull on it", true, false),
             new Room(1, "Start", "Titel på rummet\n" +
                 "Lägg till beskrivning på rum.",
                 N:2, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
@@ -59,7 +59,7 @@
         public static void Main(string[] args)
         {
 
-            List<items> inventory = new List<items>();
+            List<Items> inventory = new List<Items>();
             MovementLoop();
         }
 
@@ -67,7 +67,7 @@
         {
             do
             {
-                var keypress = Console.ReadKey();
+                var keypress = Console.ReadKey(true);
                 if (keypress.Key == ConsoleKey.UpArrow)
                 {
                     //TODO: implementera rörelsefunktion
@@ -92,7 +92,7 @@
                 {
                     //TODO: implementera sökfunktion
                     Console.WriteLine("Leta");
-                    Room.Search();
+                    //Room.Search();
                 }
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
