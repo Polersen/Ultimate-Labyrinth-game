@@ -7,24 +7,39 @@ using System.Threading.Tasks;
 namespace UltimateLabyrinthGame {
     internal class Doorway {
 
-        // TODO: Uncomment this
-        //public Room room;
-        //public Room destination;
+        public Room room;
+        public Room destination;
         public string KeyName = ""; // Empty means no key is required
 
         // Messages
         public string DoorDescription = "A regular door.";
         public string CantEnterMessage = "This door is locked, you dummy!";
 
-        public Doorway() {
-            // TODO: Set 'room' to this.
+        public Doorway(Room room, Room destination) {
+            this.room = room;
+            this.destination = destination;
+        }
+        public Doorway(Room room, Room destination, string description, string cantentermessage) {
+            this.room = room;
+            this.destination = destination;
+            DoorDescription = description;
+            CantEnterMessage = cantentermessage;
+        }
+        public Doorway(Room room, Room destination, string description, string cantentermessage, string keyname) {
+            this.room = room;
+            this.destination = destination;
+            DoorDescription = description;
+            CantEnterMessage = cantentermessage;
+            KeyName = keyname;
         }
 
-        // TODO: Create constructor that takes destination room, descripton and denial message.
-
         public void Enter() {
-            // TODO: Set player position to this room.
-            Console.WriteLine("TODO");
+            if (CanEnter()) {
+                // TODO: Set player position to this room.
+                Console.WriteLine("TODO");
+            } else {
+                Console.WriteLine(CantEnterMessage);
+            }
         }
 
         public bool CanEnter() {
