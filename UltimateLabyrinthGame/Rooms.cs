@@ -39,9 +39,9 @@ namespace UltimateLabyrinthGame
             }
         }
 
-        public Room AddItem(string name, string desc, bool iskey, bool isweapon)
+        public Room AddItem(string itemID, string name, string desc, bool iskey, bool isweapon)
         {
-            ItemsList.Add(new Items(name, desc, iskey, isweapon));
+            ItemsList.Add(new Items(itemID ,name, desc, iskey, isweapon));
             return this;
         }
 
