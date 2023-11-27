@@ -17,6 +17,7 @@ namespace UltimateLabyrinthGame
         {
             this.self = self; this.title = name; this.text = text;
             north = N; east = E; south = S; west = W;
+            ItemsList = new List<Items>();
         }
         public string Title { get { return title; } }
         public string Text { get { return text; } }
@@ -24,7 +25,7 @@ namespace UltimateLabyrinthGame
         public int East { get { return east; } set { east = value; } }
         public int South { get { return south; } set { south = value; } }
         public int West { get { return west; } set { west = value; } }
-        public List<items> Items { get; set; }
+        public List<Items> ItemsList { get; set; }
         public string Directions
         {
             get
@@ -38,16 +39,27 @@ namespace UltimateLabyrinthGame
             }
         }
 
-        public static void Search()
+        public Room AddItem(string name, string desc, bool iskey, bool isweapon)
         {
-            List<string> itemsList = new List<string>(); // TODO: Change to List<items>
+            ItemsList.Add(new Items(name, desc, iskey, isweapon));
+            return this;
+        }
 
-            itemsList.Add("Key"); // Test
-            itemsList.Add("Sword"); // Test
+        public void Search()
+        {
+            //List<Items> itemsList = new List<Items>();
 
-            for (int i = 0; i < itemsList.Count; i++)
+            //itemsList.Add(new Items("Skull Key", "A key with an ingrained skull on it", true, false));
+            //itemsList.Add(new Items("Cat Key", "A key with a cats face on it", true, false));
+            //itemsList.Add(new Items("Rusty Key", "A rusty key in poor condition", true, false));
+            //itemsList.Add(new Items("Golden Key", "A key made of pure gold", true, false));
+            //itemsList.Add(new Items("Magic Key", "A key omitting a purple light", true, false));
+
+            //itemsList.Add(new items("Glowing Sword", "A sword that emits a blue light", false, true)); // An example for a sword
+
+            for (int i = 0; i < ItemsList.Count; i++)
             {
-                Console.WriteLine(itemsList[i]);
+                Console.WriteLine($"{i+1}: {ItemsList[i].Name}");
             }
         }
     }
