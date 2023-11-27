@@ -24,6 +24,7 @@ namespace UltimateLabyrinthGame
         public int East { get { return east; } set { east = value; } }
         public int South { get { return south; } set { south = value; } }
         public int West { get { return west; } set { west = value; } }
+        public List<items> Items { get; set; }
         public string Directions
         {
             get
@@ -34,6 +35,19 @@ namespace UltimateLabyrinthGame
                 if (south != NoDoor) dir += "  s - söder\n";
                 if (west != NoDoor) dir += "  a - väster\n";
                 return dir;
+            }
+        }
+
+        public static void Search()
+        {
+            List<string> itemsList = new List<string>(); // TODO: Change to List<items>
+
+            itemsList.Add("Key"); // Test
+            itemsList.Add("Sword"); // Test
+
+            for (int i = 0; i < itemsList.Count; i++)
+            {
+                Console.WriteLine(itemsList[i]);
             }
         }
     }

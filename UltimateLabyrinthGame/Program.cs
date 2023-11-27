@@ -88,6 +88,12 @@
                     //TODO: implementera rörelsefunktion
                     Console.WriteLine("Walk right");
                 }
+                else if (keypress.Key == ConsoleKey.E)
+                {
+                    //TODO: implementera sökfunktion
+                    Console.WriteLine("Leta");
+                    Room.Search();
+                }
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
                     break;
