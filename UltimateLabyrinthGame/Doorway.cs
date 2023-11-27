@@ -17,20 +17,24 @@ namespace UltimateLabyrinthGame {
         public Doorway(Room destination) {
             this.destination = destination;
         }
+
         public Doorway(Room destination, string description) {
             this.destination = destination;
             DoorDescription = description;
         }
+
         public Doorway(int destination_index, string description) {
             destination = GetRoomFromId(destination_index);
             DoorDescription = description;
         }
+
         public Doorway(Room destination, string description, string cantentermessage, string keyname) {
             this.destination = destination;
             DoorDescription = description;
             CantEnterMessage = cantentermessage;
             KeyName = keyname;
         }
+
         public Doorway(int destination_index, string description, string cantentermessage, string keyname) {
             destination = GetRoomFromId(destination_index);
             DoorDescription = description;
@@ -49,12 +53,18 @@ namespace UltimateLabyrinthGame {
 
         public bool CanEnter() {
             if (KeyName == "") return true;
-            // TODO: Check inventory for key of right name.
+            // TODO: Check inventory for key of right item ID.
             return false;
         }
 
+        /// <summary>
+        /// Returns a Room from id.
+        /// </summary>
+        /// <param name="id">The index "self".</param>
+        /// <returns></returns>
         private static Room GetRoomFromId(int id) {
-            return null; // TODO: Returnera Room från listan i UltimateLabyrinth beroende på dess ID.
+            Room room = UltimateLabyrinth.description.Where(r => r.ID == id).First();
+            return room; // TODO: Returnera Room från listan i UltimateLabyrinth beroende på dess ID.
         }
     }
 }

@@ -25,6 +25,7 @@ namespace UltimateLabyrinthGame
         public int East { get { return east; } set { east = value; } }
         public int South { get { return south; } set { south = value; } }
         public int West { get { return west; } set { west = value; } }
+        public int ID { get { return self; } set { self = value; } }
         public List<Items> ItemsList { get; set; }
         public string Directions
         {
