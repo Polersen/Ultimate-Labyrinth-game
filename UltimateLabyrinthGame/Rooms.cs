@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -50,20 +51,26 @@ namespace UltimateLabyrinthGame
 
         public void Search()
         {
-            //List<Items> itemsList = new List<Items>();
-
-            //itemsList.Add(new Items("Skull Key", "A key with an ingrained skull on it", true, false));
-            //itemsList.Add(new Items("Cat Key", "A key with a cats face on it", true, false));
-            //itemsList.Add(new Items("Rusty Key", "A rusty key in poor condition", true, false));
-            //itemsList.Add(new Items("Golden Key", "A key made of pure gold", true, false));
-            //itemsList.Add(new Items("Magic Key", "A key omitting a purple light", true, false));
-
-            //itemsList.Add(new items("Glowing Sword", "A sword that emits a blue light", false, true)); // An example for a sword
-
+            var keypress = Console.ReadKey(true);
             for (int i = 0; i < ItemsList.Count; i++)
             {
-                Console.WriteLine($"{i+1}: {ItemsList[i].Name}");
+                Console.WriteLine($"{i}: {ItemsList[i].Name}");
+
+                if (keypress.Key == ConsoleKey.NumPad0+i)
+                {
+                    Console.WriteLine($"You picked up {ItemsList[i].Name}");
+                    PickUp(i);
+                }
             }
+        }
+
+        public void PickUp(int i)
+        {
+            Player player = new Player();
+
+            player.inventory.Add(ItemsList[i]);
+
+            ItemsList.RemoveAt(i);
         }
 
         public string ReturnRoomText() {
@@ -87,6 +94,5 @@ namespace UltimateLabyrinthGame
             ItemNotFoundText = _ItemNotFoundText;
             return this;
         }
-
     }
 }
