@@ -14,6 +14,7 @@
             player = new Player();
             player.GoToRoom(UltimateLabyrinth.description[0]);
 
+            player.inventory.Add(new Items("2", "Sword", "Big ass sword", false, true));
             player.inventory.Add(new Items("1", "Key", "It's an ugly key", true, false));
 
             MovementLoop();
@@ -46,12 +47,32 @@
                     Console.WriteLine("Search");
                     //Room.Search();
                 }
+                else if (keypress.Key == ConsoleKey.I)
+                {
+                    PrintInventory();
+                }
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
                     break;
                 }
             }
             while (true);
+
+            static void PrintInventory()
+            {
+                Console.WriteLine("Inventory:");
+                foreach (var item in player.inventory)
+                {
+                    if (item.isKey == true)
+                    {
+                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Key");
+                    }
+                    else if (item.isWeapon == true)
+                    {
+                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Weapon");
+                    }
+                }
+            }
         }
     }
 }
