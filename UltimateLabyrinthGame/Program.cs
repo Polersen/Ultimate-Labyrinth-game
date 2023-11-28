@@ -5,7 +5,7 @@
     public class UltimateLabyrinth
     {
 
-        public static Room help = new Room(-1, "Help",  // Rename what buttons to press.
+        public static Room help = new Room(-1, "Help",  
               "Keybindings:\n" +
               "  Arrow forward - walk forward\n" +
               "  Arrow down - walk back\n" +
@@ -19,45 +19,78 @@
 
         public static List<Room> description = new List<Room>()
         {
-            new Room(0,"Start", "Titel på rummet\n" +
-                "Lägg till beskrivning på rum.",
+            new Room(0,"Start", "Title on room\n" +
+                "Add description of room.",
                 N: new Doorway(1),
-                E: new Doorway(0),
+                E: null,
                 S: null,
                 W: null
                 )
-            .AddItem("skullkeyid", "Skull Key", "A key with an ingrained skull on it", true, false),
-            new Room(1, "Start", "Titel på rummet\n" +
-                "Lägg till beskrivning på rum.",
+            .AddItem("skullkeyid", "Skull Key", "A key with an ingrained skull on it", true, false), // Key needs correct id from itemIdArray?
+            new Room(1, "Start", "Title on room\n" +
+                "Add description of room.",
+                N: new Doorway(5),
+                E: null,
+                S: new Doorway(0),
+                W: null
+                ),
+            new Room(2,"Start", "Title on room\n" +
+                "Add description of room.",
+                N: null, 
+                E: null,
+                S: null,
+                W: null
+                ),
+            new Room(3,"Start", "Title on room\n" +
+                "Add description of room.",
+                N: null, 
+                E: null,
+                S: null, 
+                W: null
+                ),
+            new Room(4, "Start", "Title on room\n" +
+                "Add description of room.",
+                N: null, 
+                E: null, 
+                S: null, 
+                W: null
+                ),
+            new Room(5, "Start", "Title on room\n" +
+                "Add description of room.",
+                N: null, 
+                E: null, 
+                S: null, 
+                W: null
+                ),
+            new Room(6, "Start", "Title on room\n" +
+                "Add description of room.",
                 N: null,
-                E: null, S: null, W: null)
-            /*
-            ,
-            new Room(2,"Start", "Titel på rummet\n" +
-                "Lägg till beskrivning på rum.",
-                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(3,"Start", "Titel på rummet\n" +
-                "Lägg till beskrivning på rum.",
-                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(4, "Start", "Titel på rummet\n" +
-                "Lägg till beskrivning på rum.",
-                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(5, "Start", "Titel på rummet\n" +
-                "Lägg till beskrivning på rum.",
-                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(6, "Start", "Titel på rummet\n" +
-                "Lägg till beskrivning på rum.",
-                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(7, "Start", "Titel på rummet\n" +
-                "Lägg till beskrivning på rum.",
-                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(8, "Start", "Titel på rummet\n" +
-                "Lägg till beskrivning på rum.",
-                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            new Room(9, "Start", "Titel på rummet\n" +
-                "Lägg till beskrivning på rum.",
-                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
-            */
+                E: null, 
+                S: null, 
+                W: null
+                ),
+            new Room(7, "Start", "Title on room\n" +
+                "Add description of room.",
+                N: null,
+                E: null,
+                S: null, 
+                W: null
+                ),
+            new Room(8, "Start", "Title on room\n" +
+                "Add description of room.",
+                N: null, 
+                E: null, 
+                S: null, 
+                W: null
+                ),
+            new Room(9, "Start", "Title on room\n" +
+                "Add description of room.",
+                N: null,
+                E: null, 
+                S: null, 
+                W: null
+                ),
+
 
 
         };
@@ -100,7 +133,7 @@
                 else if (keypress.Key == ConsoleKey.E)
                 {
                     //TODO: implementera sökfunktion
-                    Console.WriteLine("Leta");
+                    Console.WriteLine("Search");
                     //Room.Search();
                 }
                 else if (keypress.Key == ConsoleKey.Escape)
