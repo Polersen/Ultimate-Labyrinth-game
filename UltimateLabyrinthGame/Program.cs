@@ -15,6 +15,7 @@
             player.GoToRoom(UltimateLabyrinth.description[0]);
 
             player.inventory.Add(new Items("1", "nyckel", "det är en ful nyckel", true, false));
+            player.inventory.Add(new Items("2", "Sword", "Big ass sword", false, true));
 
             MovementLoop();
         }
@@ -45,6 +46,21 @@
                     //TODO: implementera sökfunktion
                     Console.WriteLine("Search");
                     //Room.Search();
+                }
+                else if (keypress.Key == ConsoleKey.I)
+                {
+                    Console.WriteLine("Inventory:");
+                    foreach (var item in player.inventory)
+                    {
+                        if (item.isKey == true)
+                        {
+                            Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Key");
+                        }
+                        else if (item.isWeapon == true)
+                        {
+                            Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Weapon");
+                        }
+                    }
                 }
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
