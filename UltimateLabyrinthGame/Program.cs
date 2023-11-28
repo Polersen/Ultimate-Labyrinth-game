@@ -4,6 +4,7 @@
 
     public class UltimateLabyrinth
     {
+
         public static Room help = new Room(-1, "Help",  // Rename what buttons to press.
               "Keybindings:\n" +
               "  Arrow forward - walk forward\n" +
@@ -14,16 +15,24 @@
               "  f - Use item \n" +
               "  h - Help\n" +
               "  Esc - End program\n",
-              Room.NoDoor, Room.NoDoor, Room.NoDoor, Room.NoDoor);
+              null, null, null, null);
 
         public static List<Room> description = new List<Room>()
         {
             new Room(0,"Start", "Titel på rummet\n" +
                 "Lägg till beskrivning på rum.",
-                N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor).AddItem("Skull Key", "A key with an ingrained skull on it", true, false),
+                N: new Doorway(1),
+                E: new Doorway(0),
+                S: null,
+                W: null
+                )
+            .AddItem("skullkeyid", "Skull Key", "A key with an ingrained skull on it", true, false),
             new Room(1, "Start", "Titel på rummet\n" +
                 "Lägg till beskrivning på rum.",
-                N:2, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
+                N: null,
+                E: null, S: null, W: null)
+            /*
+            ,
             new Room(2,"Start", "Titel på rummet\n" +
                 "Lägg till beskrivning på rum.",
                 N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
@@ -48,6 +57,7 @@
             new Room(9, "Start", "Titel på rummet\n" +
                 "Lägg till beskrivning på rum.",
                 N:1, E:Room.NoDoor, S:Room.NoDoor, W:Room.NoDoor),
+            */
 
 
         };
@@ -56,9 +66,12 @@
     internal class Program
     {
 
+        public static Player player;
+
         public static void Main(string[] args)
         {
-
+            player = new Player();
+            player.GoToRoom(UltimateLabyrinth.description[0]);
             List<Items> inventory = new List<Items>();
             MovementLoop();
         }
@@ -70,23 +83,19 @@
                 var keypress = Console.ReadKey(true);
                 if (keypress.Key == ConsoleKey.UpArrow)
                 {
-                    //TODO: implementera rörelsefunktion
-                    Console.WriteLine("Walk forward");
+                    player.UseDoor(player.CurrentRoom.North);
                 }
                 else if (keypress.Key == ConsoleKey.DownArrow)
                 {
-                    //TODO: implementera rörelsefunktion
-                    Console.WriteLine("Walk back");
+                    player.UseDoor(player.CurrentRoom.South);
                 }
                 else if (keypress.Key == ConsoleKey.LeftArrow)
                 {
-                    //TODO: implementera rörelsefunktion
-                    Console.WriteLine("Walk left");
+                    player.UseDoor(player.CurrentRoom.West);
                 }
                 else if (keypress.Key == ConsoleKey.RightArrow)
                 {
-                    //TODO: implementera rörelsefunktion
-                    Console.WriteLine("Walk right");
+                    player.UseDoor(player.CurrentRoom.East);
                 }
                 else if (keypress.Key == ConsoleKey.E)
                 {

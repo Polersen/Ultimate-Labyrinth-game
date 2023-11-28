@@ -5,38 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace UltimateLabyrinthGame {
-    internal class Doorway {
+    public class Doorway {
 
-        public Room destination;
+        public int Destination;
         public string KeyName = ""; // Empty means no key is required
 
         // Messages
         public string DoorDescription = "A regular door.";
         public string CantEnterMessage = "This door is locked, you dummy!";
 
-        public Doorway(Room destination) {
-            this.destination = destination;
-        }
-
-        public Doorway(Room destination, string description) {
-            this.destination = destination;
-            DoorDescription = description;
+        public Doorway(int destination_index) {
+            Destination = destination_index;
         }
 
         public Doorway(int destination_index, string description) {
-            destination = GetRoomFromId(destination_index);
+            Destination = destination_index;
             DoorDescription = description;
-        }
-
-        public Doorway(Room destination, string description, string cantentermessage, string keyname) {
-            this.destination = destination;
-            DoorDescription = description;
-            CantEnterMessage = cantentermessage;
-            KeyName = keyname;
         }
 
         public Doorway(int destination_index, string description, string cantentermessage, string keyname) {
-            destination = GetRoomFromId(destination_index);
+            Destination = destination_index;
             DoorDescription = description;
             CantEnterMessage = cantentermessage;
             KeyName = keyname;
@@ -44,8 +32,8 @@ namespace UltimateLabyrinthGame {
 
         public void Enter() {
             if (CanEnter()) {
-                // TODO: Set player position to this room.
-                Console.WriteLine("TODO");
+                Room room = GetRoomFromId(Destination);
+                Program.player.GoToRoom(room);
             } else {
                 Console.WriteLine(CantEnterMessage);
             }
