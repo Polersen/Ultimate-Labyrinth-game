@@ -14,6 +14,7 @@
             player = new Player();
             player.GoToRoom(UltimateLabyrinth.description[0]);
 
+            player.inventory.Add(new Items("2", "Sword", "Big ass sword", false, true));
             player.inventory.Add(new Items("1", "Key", "It's an ugly key", true, false));
 
             MovementLoop();
@@ -45,12 +46,53 @@
                     player.CurrentRoom.Search();
                     //player.inventory.Add(player.CurrentRoom.ItemsList[0]);
                 }
+                else if (keypress.Key == ConsoleKey.I)
+                {
+                    PrintInventory();
+                }
+                else if (keypress.Key == ConsoleKey.H)
+                {
+                    Help();
+                }
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
                     break;
                 }
             }
             while (true);
+
+            static void PrintInventory()
+            {
+                Console.WriteLine("Inventory:");
+                foreach (var item in player.inventory)
+                {
+                    if (item.isKey == true)
+                    {
+                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Key");
+                    }
+                    else if (item.isWeapon == true)
+                    {
+                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Weapon");
+                    }
+                }
+            }
+
+            static void Help()
+            {
+                Console.WriteLine("Keybindings:\n" +
+                    "  Arrow forward - walk forward\n" +
+                    "  Arrow down - walk back\n" +
+                    "  Arrow right - walk right\n" +
+                    "  Arrow left - walk left\n" +
+                    "  E - Search\n" +
+                    "  F - Use item \n" +
+                    "  I - Open inventory\n" +
+                    "  R - Run away\n" +
+                    "  T - Try to fight\n" +
+                    "  G - Glare\n" +
+                    "  H - Help\n" +
+                    "  Esc - End program\n");
+            }
         }
     }
 }

@@ -24,9 +24,10 @@ namespace UltimateLabyrinthGame {
 
         public void GoToRoom(Room room) {
             CurrentRoom = room;
-            // TODO: Ersätt raden under med ruminformation
-            Console.WriteLine($"Du gick in i rum {room.ID}.");
-            Console.WriteLine(room.Directions);
+
+            Console.Clear(); // Rensa skärmen
+            string text = room.ReturnRoomText();
+            Console.WriteLine(text);
         }
 
         public void UseDoor(Doorway door) {

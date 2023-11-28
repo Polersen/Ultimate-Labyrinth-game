@@ -7,19 +7,7 @@ using System.Threading.Tasks;
 namespace UltimateLabyrinthGame
 {
     public class UltimateLabyrinth
-    {
-
-        public static Room help = new Room(-1, "Help",
-              "Keybindings:\n" +
-              "  Arrow forward - walk forward\n" +
-              "  Arrow down - walk back\n" +
-              "  Arrow right - walk right\n" +
-              "  Arrow left - walk left\n" +
-              "  e - Search\n" +
-              "  f - Use item \n" +
-              "  h - Help\n" +
-              "  Esc - End program\n",
-              null, null, null, null);
+    {    
 
         public static List<Room> description = new List<Room>()
         {
@@ -30,7 +18,8 @@ namespace UltimateLabyrinthGame
                 S: null,
                 W: null
                 )
-            .AddItem("skullkeyid", "Skull Key", "A key with an ingrained skull on it", true, false), // Key needs correct id from itemIdArray?
+            .AddItem("skullkeyid", "Skull Key", "A key with an ingrained skull on it", true, false) // Key needs correct id from itemIdArray?
+            .SetRoomItemsDescription("There seems to be something on the floor.", "The item you earlier found on the floor is now gone."), 
             new Room(1, "Start", "Title on room\n" +
                 "Add description of room.",
                 N: new Doorway(5),
