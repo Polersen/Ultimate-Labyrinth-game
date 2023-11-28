@@ -7,6 +7,18 @@ using System.Threading.Tasks;
 namespace UltimateLabyrinthGame {
     internal class Player {
 
+        public bool hasKey(string id)
+        {
+            foreach(Items i in inventory)
+            {
+                if (i.isKey == true && i.itemID == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public List<Items> inventory = new List<Items>();
         public Room CurrentRoom { get; set; }
 

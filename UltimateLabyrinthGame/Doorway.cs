@@ -41,11 +41,12 @@ namespace UltimateLabyrinthGame {
 
         public bool CanEnter() {
             if (KeyName == "") return true;
-            foreach (Items i in Program.player.inventory)
+            /*foreach (Items i in Program.player.inventory)
             {
                 if (i.itemID == KeyName) return true;
             }
-            return false;
+            return false;*/
+            return Program.player.hasKey(KeyName);
         }
 
         /// <summary>
@@ -53,7 +54,8 @@ namespace UltimateLabyrinthGame {
         /// </summary>
         /// <param name="id">The index "self".</param>
         /// <returns></returns>
-        private static Room GetRoomFromId(int id) {
+        private static Room GetRoomFromId(int id)
+        {
             Room room = UltimateLabyrinth.description.Where(r => r.ID == id).First();
             return room; // TODO: Returnera Room från listan i UltimateLabyrinth beroende på dess ID.
         }
