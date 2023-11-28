@@ -39,6 +39,9 @@ namespace UltimateLabyrinthGame
             }
         }
 
+        public string ItemFoundText = "";
+        public string ItemNotFoundText = "";
+
         public Room AddItem(string itemID, string name, string desc, bool iskey, bool isweapon)
         {
             ItemsList.Add(new Items(itemID ,name, desc, iskey, isweapon));
@@ -62,5 +65,28 @@ namespace UltimateLabyrinthGame
                 Console.WriteLine($"{i+1}: {ItemsList[i].Name}");
             }
         }
+
+        public string ReturnRoomText() {
+            string ret = $"{title}:\n" +
+                $"{text}\n";
+            if (ItemsList.Count > 0) {
+                if(ItemFoundText != "") {
+                    ret += ItemFoundText + "\n";
+                }
+            } else {
+                if(ItemNotFoundText != "") {
+                    ret += ItemNotFoundText + "\n";
+                }
+            }
+            ret += $"{Directions}";
+            return ret;
+        }
+
+        public Room SetRoomItemsDescription(string _ItemFoundText, string _ItemNotFoundText) {
+            ItemFoundText = _ItemFoundText;
+            ItemNotFoundText = _ItemNotFoundText;
+            return this;
+        }
+
     }
 }

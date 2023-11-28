@@ -18,7 +18,8 @@ namespace UltimateLabyrinthGame
                 S: null,
                 W: null
                 )
-            .AddItem("skullkeyid", "Skull Key", "A key with an ingrained skull on it", true, false), // Key needs correct id from itemIdArray?
+            .AddItem("skullkeyid", "Skull Key", "A key with an ingrained skull on it", true, false) // Key needs correct id from itemIdArray?
+            .SetRoomItemsDescription("There seems to be something on the floor.", "The item you earlier found on the floor is now gone."), 
             new Room(1, "Start", "Title on room\n" +
                 "Add description of room.",
                 N: new Doorway(5),
