@@ -25,7 +25,7 @@ namespace UltimateLabyrinthGame
         {
             new Room(0,"Start", "Title on room\n" +
                 "Add description of room.",
-                N: new Doorway(1),
+                N: new Doorway(1){KeyName = "1"},
                 E: null,
                 S: null,
                 W: null
