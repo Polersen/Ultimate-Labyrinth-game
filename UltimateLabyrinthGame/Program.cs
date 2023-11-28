@@ -49,18 +49,7 @@
                 }
                 else if (keypress.Key == ConsoleKey.I)
                 {
-                    Console.WriteLine("Inventory:");
-                    foreach (var item in player.inventory)
-                    {
-                        if (item.isKey == true)
-                        {
-                            Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Key");
-                        }
-                        else if (item.isWeapon == true)
-                        {
-                            Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Weapon");
-                        }
-                    }
+                    PrintInventory();
                 }
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
@@ -68,6 +57,22 @@
                 }
             }
             while (true);
+
+            static void PrintInventory()
+            {
+                Console.WriteLine("Inventory:");
+                foreach (var item in player.inventory)
+                {
+                    if (item.isKey == true)
+                    {
+                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Key");
+                    }
+                    else if (item.isWeapon == true)
+                    {
+                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Weapon");
+                    }
+                }
+            }
         }
     }
 }
