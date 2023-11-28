@@ -62,5 +62,13 @@ namespace UltimateLabyrinthGame
                 Console.WriteLine($"{i+1}: {ItemsList[i].Name}");
             }
         }
+
+        public string ReturnRoomText() {
+            string ret = $"{title}:\n" +
+                $"{text}\n" +
+                $"{Directions}";
+            return ret;
+        }
+
     }
 }
