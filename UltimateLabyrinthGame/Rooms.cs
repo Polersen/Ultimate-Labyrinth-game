@@ -51,25 +51,44 @@ namespace UltimateLabyrinthGame
 
         public void Search()
         {
-            var keypress = Console.ReadKey(true);
-            for (int i = 0; i < ItemsList.Count; i++)
+            string pickUpmsg = "";
+            while (true)
             {
-                Console.WriteLine($"{i}: {ItemsList[i].Name}");
+                Console.Clear();
 
-                if (keypress.Key == ConsoleKey.NumPad0+i)
+                Console.WriteLine("Press Q to go back\n");
+
+                for (int i = 0; i < ItemsList.Count; i++)
                 {
-                    Console.WriteLine($"You picked up {ItemsList[i].Name}");
-                    PickUp(i);
+                    Console.WriteLine($"{i + 1}: {ItemsList[i].Name}");
                 }
+
+                Console.WriteLine(pickUpmsg);
+
+                if (ItemsList.Count == 0)
+                    Console.WriteLine("There are no more items here.");
+
+                var keypress = Console.ReadKey(true);
+                for (int i = 0; i < ItemsList.Count; i++)
+                {
+                    if (keypress.Key == ConsoleKey.D1 + i)
+                    {
+                        pickUpmsg = $"You picked up {ItemsList[i].Name}";
+                        PickUp(i);
+                    }
+                }
+
+                if (keypress.Key == ConsoleKey.Q)
+                    break;
             }
+            Console.Clear(); // Rensa skärmen
+            string text = Program.player.CurrentRoom.ReturnRoomText();
+            Console.WriteLine(text);
         }
 
         public void PickUp(int i)
         {
-            Player player = new Player();
-
-            player.inventory.Add(ItemsList[i]);
-
+            Program.player.inventory.Add(ItemsList[i]);
             ItemsList.RemoveAt(i);
         }
 

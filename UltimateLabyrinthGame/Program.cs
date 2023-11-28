@@ -44,7 +44,6 @@
                 else if (keypress.Key == ConsoleKey.E)
                 {
                     player.CurrentRoom.Search();
-                    //player.inventory.Add(player.CurrentRoom.ItemsList[0]);
                 }
                 else if (keypress.Key == ConsoleKey.I)
                 {
