@@ -15,7 +15,7 @@
             player.GoToRoom(UltimateLabyrinth.description[0]);
 
             player.inventory.Add(new Items("2", "Sword", "Big ass sword", false, true));
-            player.inventory.Add(new Items("1", "Key", "It's an ugly key", true, false));
+            player.inventory.Add(new Items("1", "Key", "Ingrained skull on it", true, false));
 
             MovementLoop();
         }
