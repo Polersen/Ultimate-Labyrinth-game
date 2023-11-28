@@ -42,9 +42,8 @@
                 }
                 else if (keypress.Key == ConsoleKey.E)
                 {
-                    //TODO: implementera sökfunktion
-                    Console.WriteLine("Search");
-                    //Room.Search();
+                    player.CurrentRoom.Search();
+                    //player.inventory.Add(player.CurrentRoom.ItemsList[0]);
                 }
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
