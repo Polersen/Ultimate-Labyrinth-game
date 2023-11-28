@@ -7,19 +7,7 @@ using System.Threading.Tasks;
 namespace UltimateLabyrinthGame
 {
     public class UltimateLabyrinth
-    {
-
-        public static Room help = new Room(-1, "Help",
-              "Keybindings:\n" +
-              "  Arrow forward - walk forward\n" +
-              "  Arrow down - walk back\n" +
-              "  Arrow right - walk right\n" +
-              "  Arrow left - walk left\n" +
-              "  e - Search\n" +
-              "  f - Use item \n" +
-              "  h - Help\n" +
-              "  Esc - End program\n",
-              null, null, null, null);
+    {    
 
         public static List<Room> description = new List<Room>()
         {

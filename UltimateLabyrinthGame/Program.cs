@@ -51,6 +51,10 @@
                 {
                     PrintInventory();
                 }
+                else if (keypress.Key == ConsoleKey.H)
+                {
+                    Help();
+                }
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
                     break;
@@ -72,6 +76,23 @@
                         Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Weapon");
                     }
                 }
+            }
+
+            static void Help()
+            {
+                Console.WriteLine("Keybindings:\n" +
+                    "  Arrow forward - walk forward\n" +
+                    "  Arrow down - walk back\n" +
+                    "  Arrow right - walk right\n" +
+                    "  Arrow left - walk left\n" +
+                    "  E - Search\n" +
+                    "  F - Use item \n" +
+                    "  I - Open inventory\n" +
+                    "  R - Run away\n" +
+                    "  T - Try to fight\n" +
+                    "  G - Glare\n" +
+                    "  H - Help\n" +
+                    "  Esc - End program\n");
             }
         }
     }
