@@ -13,7 +13,9 @@
         {
             player = new Player();
             player.GoToRoom(UltimateLabyrinth.description[0]);
-            List<Items> inventory = new List<Items>();
+
+            player.inventory.Add(new Items("1", "nyckel", "det är en ful nyckel", true, false));
+
             MovementLoop();
         }
 

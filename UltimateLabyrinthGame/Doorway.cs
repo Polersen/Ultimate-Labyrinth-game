@@ -41,7 +41,10 @@ namespace UltimateLabyrinthGame {
 
         public bool CanEnter() {
             if (KeyName == "") return true;
-            // TODO: Check inventory for key of right item ID.
+            foreach (Items i in Program.player.inventory)
+            {
+                if (i.itemID == KeyName) return true;
+            }
             return false;
         }
 

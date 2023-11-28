@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace UltimateLabyrinthGame {
     internal class Player {
 
+        public List<Items> inventory = new List<Items>();
         public Room CurrentRoom { get; set; }
 
         public void GoToRoom(Room room) {
