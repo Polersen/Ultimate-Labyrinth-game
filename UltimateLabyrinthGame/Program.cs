@@ -14,7 +14,7 @@
             player = new Player();
             player.GoToRoom(UltimateLabyrinth.description[0]);
 
-            player.inventory.Add(new Items("1", "nyckel", "det är en ful nyckel", true, false));
+            player.inventory.Add(new Items("1", "Key", "It's an ugly key", true, false));
 
             MovementLoop();
         }
