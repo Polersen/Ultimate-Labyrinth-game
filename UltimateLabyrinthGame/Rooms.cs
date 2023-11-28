@@ -30,11 +30,11 @@ namespace UltimateLabyrinthGame
         {
             get
             {
-                string dir = "Det går dörrar till:\n";
-                if(north != null) dir += "  w - norr\n";
-                if (east != null) dir += "  d - öster\n";
-                if (south != null) dir += "  s - söder\n";
-                if (west != null) dir += "  a - väster\n";
+                string dir = "There are doors to your:\n";
+                if(north != null) dir += "  Front - North\n";
+                if (east != null) dir += "  Right - East\n";
+                if (south != null) dir += "  Back - South\n";
+                if (west != null) dir += "  Left - West\n";
                 return dir;
             }
         }
