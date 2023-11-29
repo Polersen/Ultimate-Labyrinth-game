@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace UltimateLabyrinthGame
 {
     public class UltimateLabyrinth
-    {    
+    {
 
         public static List<Room> description = new List<Room>()
         {
@@ -36,14 +36,15 @@ namespace UltimateLabyrinthGame
                 .AddMonster(new Monster("Tiny Astrid", "A ferocious beast stands in the middle of the room. She is standing on your keyboard. God damn! Better slay it now before it causes any danger to the rest of the kingdom.", "2")), //TODO: Remove this fierce testing beast.
             new Room(2,"The Labyrinth", "Scary Room\n" +                    // ToDo - Add monster in this room
                 " AAH! A monster lashes out at you when you enter!\n" +
-                " It doesnt quite reach you. It seems to be chained\n" +    
-                " to the back wall, there is a chest in the corner.\n",     // ToDo - Add key in this room (Opens door to 7.)
+                " It doesnt quite reach you. It seems to be chained\n" +
+                " to the back wall, there is a chest in the corner.\n",
                 N: null,                                                    // ToDo - Add chest in this room (Ooooh gold or whatever!)
                 E: null,
                 S: new Doorway(6),
                 W: null
-                ),
-            new Room(3,"The Labyrinth", "The Armory\n" +                    // ToDo - Add key in this room (Opens door to 2.)
+                )
+                .AddItem("7","room7","Key to room 7",true,false),
+            new Room(3,"The Labyrinth", "The Armory\n" +
                 " All along the walls are scraps of metal that\n" +
                 " seem to have been armor, a few decades ago.\n" +
                 " At the back of the room there is an armor stand with a greatsword.\n" +
@@ -52,14 +53,15 @@ namespace UltimateLabyrinthGame
                 E: null,
                 S: new Doorway(4),
                 W: null
-                ),
+                )
+                .AddItem("2", "room2", "Key to room 2", true, false),
             new Room(4, "The Labyrinth", "The Bridge\n" +
                 " The floor in this room is just a dark abyss aside from\n" +
                 " the narrow stone pathway that is covered in wet moss.\n" +
                 " But you see a door at the end of the pathway.\n" +
                 " Watch your step so you dont fall...\n",
                 N: null,
-                E: new Doorway(3),
+                E: new Doorway(3){KeyName = "3"},
                 S: new Doorway(5),
                 W: null
                 ),
@@ -67,7 +69,7 @@ namespace UltimateLabyrinthGame
                 " This room is brightly lit by torches\n" +
                 " and has doors in every direction!\n" +
                 " The door straight ahead has a symbol of a cat on it.\n",
-                N: new Doorway(7),
+                N: new Doorway(7){KeyName = "7"},
                 E: new Doorway(4),
                 S: new Doorway(1),
                 W: new Doorway(6)
@@ -77,12 +79,13 @@ namespace UltimateLabyrinthGame
                 " there is a skull above the door that looks ominous.\n" +
                 " Every other wall is all bookshelves, stacked\n" +
                 " to the brim with books and junk.\n\n" +
-                " Maybe there is something useful in this room...",     // ToDo - Add key in this room (Opens door to 3.)
+                " Maybe there is something useful in this room...",
                 N: null,
                 E: new Doorway(5),
-                S: new Doorway(2),
+                S: new Doorway(2){KeyName = "2"},
                 W: null
-                ),
+                )
+                .AddItem("3", "room3", "Key to room 3", true, false),
             new Room(7, "The Labyrinth", "The Cat Room\n" +
                 " The floor of this room is a shallow pit filled with angry kittens!\n" +
                 " You have to step down into the pit to get across.\n" +
@@ -102,7 +105,7 @@ namespace UltimateLabyrinthGame
                 " At the top of it is a tree, and you can see a faint\n" +
                 " glimpse of light escaping underneath it.\n",
                 N: null,
-                E: new Doorway(9),
+                E: new Doorway(9){KeyName = "9"},
                 S: null,
                 W: new Doorway(7)
                 ),
@@ -114,7 +117,7 @@ namespace UltimateLabyrinthGame
                 S: null,
                 W: new Doorway(8)
                 ),
-             new Room(10, "The Labyrinth", "The Nasty Room\n" +             // ToDo - Add key in this room (Opens door to 9)
+             new Room(10, "The Labyrinth", "The Nasty Room\n" +
                 " This room.. is slimy, smelly and disgusting.\n" +
                 " Every surface of this room made of fleshy material,\n" +
                 " and worst of all, it is pulsating... Like its alive.\n" +
@@ -125,6 +128,7 @@ namespace UltimateLabyrinthGame
                 S: null,
                 W: null
                 )
+                .AddItem("9", "room9", "Key to room 9", true, false),
 
         };
     }
