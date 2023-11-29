@@ -19,6 +19,13 @@ namespace UltimateLabyrinthGame {
             return false;
         }
 
+        public Items GetWeapon(string id) {
+            foreach(Items i in inventory) {
+                if (i.isWeapon == true && i.itemID == id) return i;
+            }
+            return null;
+        }
+
         public List<Items> inventory = new List<Items>();
         public Room CurrentRoom { get; set; }
 
@@ -31,11 +38,17 @@ namespace UltimateLabyrinthGame {
         }
 
         public void UseDoor(Doorway door) {
-            if (door != null) {
-                door.Enter();
-            } else {
-                Console.WriteLine("You walked into the solid rock wall. Owie.");
+            if (Program.player.CurrentRoom.GetFrontMonster() == null) {
+                if (door != null) {
+                    door.Enter();
+                } else {
+                    Console.WriteLine("You walked into the solid rock wall. Owie.");
+                }
             }
+        }
+
+        public void Die() {
+            Console.WriteLine("You died. (TODO)");
         }
     }
 }
