@@ -26,6 +26,18 @@ namespace UltimateLabyrinthGame
 
         public Items DropItem;
 
+        public static List<Monster> AllMonstersList = new List<Monster>()
+        {
+            new Monster("Spaghetti Monster", "A flying ball of spaghetti is flailing its spaghetti-like arms at you!", "Fork"),
+            new Monster("Fire Dragon", "A fire breathing dragon is snarling at you!", "Ice Sword"),
+            new Monster("Ogre", "A stupid ogre is staring at you!", "Cat Dagger"),
+            new Monster("Astrid", "A nimble cat with razor sharp claws slashing at you!", "Water"),
+            new Monster("Goblin", "A small agitated little goblin is screaming at you to leave his precious alone!", "Light"),
+            new Monster("Giant Spider", "An enormous spider is spinning web arount what looks like a corpse!", "Fire"),
+            new Monster("Wraith", "A ghost-like creature is hovering slightly above the floor with a dagger in each hand!", "Electricity"),
+            new Monster("Stone Golem", "A large human-like creature made of solid stone swinging its arms at you!", "Pickaxe")
+        };
+
         // Körs när månstret attackeras
         public void OnAttacked() {
             Items item = Program.player.GetWeapon(Weakness);

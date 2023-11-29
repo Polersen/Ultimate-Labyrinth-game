@@ -50,6 +50,7 @@ namespace UltimateLabyrinthGame
                 S: new Doorway(6),
                 W: null
                 )
+                .AddMonster(Monster.AllMonstersList[0])
                 .AddItem("7","room7","Key to room 7",true,false),
             new Room(3,"The Labyrinth", "The Armory\n" +
                 " All along the walls are scraps of metal that\n" +
