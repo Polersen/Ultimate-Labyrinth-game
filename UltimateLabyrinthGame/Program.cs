@@ -14,11 +14,13 @@
             player = new Player();
             player.GoToRoom(UltimateLabyrinth.description[0]);
 
-            player.inventory.Add(new Items("2", "Sword", "Big ass sword", false, true));
-            player.inventory.Add(new Items("1", "Key", "Ingrained skull on it", true, false));
+            /*player.inventory.Add(new Items("2", "Sword", "Big ass sword", false, true));
+            player.inventory.Add(new Items("1", "Key", "Ingrained skull on it", true, false));*/
 
             MovementLoop();
         }
+
+        public static bool IsRunning = true;
 
         public static void MovementLoop()
         {
@@ -65,7 +67,8 @@
                 }
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
-                    break;
+                    Console.WriteLine("Goodbye!");
+                    IsRunning = false;
                 }else if (keypress.Key == ConsoleKey.T) {
                     // Try to fight
                     Monster monster = player.CurrentRoom.GetFrontMonster();
@@ -74,7 +77,7 @@
                     }
                 }
             }
-            while (true);
+            while (IsRunning);
 
             static void PrintInventory()
             {
