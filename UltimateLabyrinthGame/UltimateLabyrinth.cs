@@ -80,9 +80,9 @@ namespace UltimateLabyrinthGame
                 " to the brim with books and junk.\n\n" +
                 " Maybe there is something useful in this room...",
                 N: null,
-                E: new Doorway(5),
-                S: new Doorway(2){KeyName = "2"},
-                W: null
+                E: null,
+                S: new Doorway(5),
+                W: new Doorway(2){KeyName = "2"}
                 )
                 .AddItem("3", "room3", "Key to room 3", true, false),
             new Room(7, "The Labyrinth", "The Cat Room\n" +
