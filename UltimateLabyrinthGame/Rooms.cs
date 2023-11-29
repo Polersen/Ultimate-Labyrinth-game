@@ -93,18 +93,30 @@ namespace UltimateLabyrinthGame
         }
 
         public string ReturnRoomText() {
+            
+            Monster monster = GetFrontMonster();
+            string ret = BasicRoomText();
+            
+            if(monster == null) {
+                ret += $"{Directions}";
+            } else {
+                ret += monster.ReturnMonsterFightText();
+            }
+            return ret;
+        }
+
+        public string BasicRoomText() { // Rätt så lat kod egentligen
             string ret = $"{title}:\n" +
                 $"{text}\n";
             if (ItemsList.Count > 0) {
-                if(ItemFoundText != "") {
+                if (ItemFoundText != "") {
                     ret += ItemFoundText + "\n";
                 }
             } else {
-                if(ItemNotFoundText != "") {
+                if (ItemNotFoundText != "") {
                     ret += ItemNotFoundText + "\n";
                 }
             }
-            ret += $"{Directions}";
             return ret;
         }
 

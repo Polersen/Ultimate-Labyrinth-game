@@ -51,9 +51,10 @@
                 }
                 else if (keypress.Key == ConsoleKey.R)
                 {
-                    if (Doorway.GetRoomFromId(2) == player.CurrentRoom) {
-
+                    if (player.CurrentRoom.GetFrontMonster() != null) {
+                        Console.WriteLine("You run away.");
                         player.GoToRoom(UltimateLabyrinth.description[5]);
+                        Console.WriteLine("You have just run back into this room.");
                     }
                 }
                 else if (keypress.Key == ConsoleKey.H)
@@ -65,7 +66,10 @@
                     break;
                 }else if (keypress.Key == ConsoleKey.T) {
                     // Try to fight
-                    // TODO: Lägg till funktioner här
+                    Monster monster = player.CurrentRoom.GetFrontMonster();
+                    if (monster != null) {
+                        monster.OnAttacked();
+                    }
                 }
             }
             while (true);

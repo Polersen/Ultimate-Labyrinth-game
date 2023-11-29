@@ -19,6 +19,13 @@ namespace UltimateLabyrinthGame {
             return false;
         }
 
+        public Items GetWeapon(string id) {
+            foreach(Items i in inventory) {
+                if (i.isWeapon == true && i.itemID == id) return i;
+            }
+            return null;
+        }
+
         public List<Items> inventory = new List<Items>();
         public Room CurrentRoom { get; set; }
 
@@ -36,6 +43,10 @@ namespace UltimateLabyrinthGame {
             } else {
                 Console.WriteLine("You walked into the solid rock wall. Owie.");
             }
+        }
+
+        public void Die() {
+            Console.WriteLine("You died. (TODO)");
         }
     }
 }
