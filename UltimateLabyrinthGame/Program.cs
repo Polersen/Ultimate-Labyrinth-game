@@ -25,19 +25,19 @@
             do
             {
                 var keypress = Console.ReadKey(true);
-                if (keypress.Key == ConsoleKey.UpArrow)
+                if (keypress.Key == ConsoleKey.UpArrow || keypress.Key == ConsoleKey.W)
                 {
                     player.UseDoor(player.CurrentRoom.North);
                 }
-                else if (keypress.Key == ConsoleKey.DownArrow)
+                else if (keypress.Key == ConsoleKey.DownArrow || keypress.Key == ConsoleKey.S)
                 {
                     player.UseDoor(player.CurrentRoom.South);
                 }
-                else if (keypress.Key == ConsoleKey.LeftArrow)
+                else if (keypress.Key == ConsoleKey.LeftArrow || keypress.Key == ConsoleKey.A)
                 {
                     player.UseDoor(player.CurrentRoom.West);
                 }
-                else if (keypress.Key == ConsoleKey.RightArrow)
+                else if (keypress.Key == ConsoleKey.RightArrow || keypress.Key == ConsoleKey.D)
                 {
                     player.UseDoor(player.CurrentRoom.East);
                 }
@@ -79,10 +79,10 @@
             static void Help()
             {
                 Console.WriteLine("Keybindings:\n" +
-                    "  Arrow forward - walk forward\n" +
-                    "  Arrow down - walk back\n" +
-                    "  Arrow right - walk right\n" +
-                    "  Arrow left - walk left\n" +
+                    "  W / Arrow forward - walk forward\n" +
+                    "  S / Arrow down - walk back\n" +
+                    "  D / Arrow right - walk right\n" +
+                    "  A / Arrow left - walk left\n" +
                     "  E - Search\n" +
                     "  F - Use item \n" +
                     "  I - Open inventory\n" +
