@@ -46,14 +46,15 @@ namespace UltimateLabyrinthGame
             new Room(3,"The Labyrinth", "The Armory\n" +
                 " All along the walls are scraps of metal that\n" +
                 " seem to have been armor, a few decades ago.\n" +
-                " At the back of the room there is an armor stand with a greatsword and a halfbroken chest.\n" +
-                " The sword is a little blunt but usable still.\n",         // ToDo - Add sword in this room.
+                " At the back of the room there is an armor stand with a weapon and a halfbroken chest.\n" +
+                " The weapon is a little blunt but usable still.\n",         
                 N: null,
                 E: null,
                 S: new Doorway(4),
                 W: null
                 )
                 .AddItem("2", "Skull Key", "Key to room with skull on door", true, false)
+                .AddItem("Giant fork", "Giant fork", "Fork made to make spin attack ", false, true)
                 .SetRoomItemsDescription("There seems to be something next to the broken chest...\n", "The item you earlier found is now gone.\n"),
             new Room(4, "The Labyrinth", "The Bridge\n" +
                 " The floor in this room is just a dark abyss aside from\n" +

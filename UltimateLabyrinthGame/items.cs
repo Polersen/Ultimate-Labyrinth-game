@@ -19,7 +19,8 @@ namespace UltimateLabyrinthGame
         {
             new Items("mega sword", "Mega Sword", "The biggest sword you have ever seen", false, true),
             new Items("spray bottle", "Water Spray Bottle", "A Normal Spray bottle used for cleaning", false, true),
-            new Items("fire sword", "Fire Sword", "Sword Engulfed In Flames", false, true)
+            new Items("fire sword", "Fire Sword", "Sword Engulfed In Flames", false, true),
+            new Items("Giant fork", "Giant fork", "Fork made to make spin attack ", false, true)
         };
     }
 
