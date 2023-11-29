@@ -54,7 +54,7 @@ namespace UltimateLabyrinthGame {
         /// </summary>
         /// <param name="id">The index "self".</param>
         /// <returns></returns>
-        private static Room GetRoomFromId(int id)
+        public static Room GetRoomFromId(int id)
         {
             Room room = UltimateLabyrinth.description.Where(r => r.ID == id).First();
             return room; // TODO: Returnera Room från listan i UltimateLabyrinth beroende på dess ID.
