@@ -32,7 +32,8 @@ namespace UltimateLabyrinthGame
                 E: null,
                 S: new Doorway(0),
                 W: null
-                ),
+                )
+                .AddMonster(new Monster("Tiny Astrid", "A ferocious beast stands in the middle of the room. She is standing on your keyboard. God damn! Better slay it now before it causes any danger to the rest of the kingdom.", "2")), //TODO: Remove this fierce testing beast.
             new Room(2,"The Labyrinth", "Scary Room\n" +                    // ToDo - Add monster in this room
                 " AAH! A monster lashes out at you when you enter!\n" +
                 " It doesnt quite reach you. It seems to be chained\n" +    

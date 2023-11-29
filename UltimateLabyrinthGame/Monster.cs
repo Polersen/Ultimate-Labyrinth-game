@@ -39,6 +39,13 @@ namespace UltimateLabyrinthGame
                 Console.WriteLine($"The monster dropped an item: {item.Name}");
                 Program.player.inventory.Add(item);
             }
+
+            // TODO: Remove from list.
+        }
+
+        public Monster SetDroppedItem(Items item) {
+            DropItem = item;
+            return this;
         }
     }
 }

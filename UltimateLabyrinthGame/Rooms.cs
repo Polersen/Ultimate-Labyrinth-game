@@ -119,8 +119,12 @@ namespace UltimateLabyrinthGame
         public Room AddMonster(Monster monster) {
             MonsterList.Add(monster);
             monster.Room = this;
-
             return this;
+        }
+
+        public Monster GetFrontMonster() {
+            if (MonsterList.Count == 0) return null;
+            return MonsterList[0];
         }
     }
 }
