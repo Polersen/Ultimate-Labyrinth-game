@@ -99,6 +99,8 @@ namespace UltimateLabyrinthGame
             
             if(monster == null) {
                 ret += $"{Directions}";
+                ret += "E - Search the room\n";
+                ret += "I - Open inventory\n";
             } else {
                 ret += monster.ReturnMonsterFightText();
             }

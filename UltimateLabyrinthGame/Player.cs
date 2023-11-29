@@ -38,10 +38,12 @@ namespace UltimateLabyrinthGame {
         }
 
         public void UseDoor(Doorway door) {
-            if (door != null) {
-                door.Enter();
-            } else {
-                Console.WriteLine("You walked into the solid rock wall. Owie.");
+            if (Program.player.CurrentRoom.GetFrontMonster() == null) {
+                if (door != null) {
+                    door.Enter();
+                } else {
+                    Console.WriteLine("You walked into the solid rock wall. Owie.");
+                }
             }
         }
 

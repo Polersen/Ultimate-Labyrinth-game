@@ -34,11 +34,11 @@ namespace UltimateLabyrinthGame
                 W: null
                 )
                 .AddMonster(
-                new Monster("Tiny Astrid", "A ferocious beast stands in the middle of the room. She is standing on your keyboard. God damn! Better slay it now before it causes any danger to the rest of the kingdom.", "2")
-                .SetDroppedItem(new Items("catdagger", "Cat Dagger", "It's a precious little dagger only known to be dropped by cats.", false, true))
+                    new Monster("Tiny Astrid", "A ferocious beast stands in the middle of the room. She is standing on your keyboard. God damn! Better slay it now before it causes any danger to the rest of the kingdom.", "2")
+                    .SetDroppedItem(new Items("catdagger", "Cat Dagger", "It's a precious little dagger only known to be dropped by cats.", false, true))
                 )
                 .AddMonster(
-                new Monster("Tinier Astrid", "No way! It's mini-Astrid! No way!", "2")
+                    new Monster("Tinier Astrid", "No way! It's mini-Astrid! No way!", "2")
                 )
             , //TODO: Remove this fierce testing beast.
             new Room(2,"The Labyrinth", "Scary Room\n" +                    // ToDo - Add monster in this room

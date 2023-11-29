@@ -43,7 +43,9 @@
                 }
                 else if (keypress.Key == ConsoleKey.E)
                 {
-                    player.CurrentRoom.Search();
+                    if (player.CurrentRoom.GetFrontMonster() == null) {
+                        player.CurrentRoom.Search();
+                    }
                 }
                 else if (keypress.Key == ConsoleKey.I)
                 {

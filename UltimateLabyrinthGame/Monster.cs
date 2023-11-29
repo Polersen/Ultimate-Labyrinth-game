@@ -57,7 +57,8 @@ namespace UltimateLabyrinthGame
 
             if (Room.MonsterList.Count == 0) {
                 Console.WriteLine("The room is now free from monsters.\n");
-                Console.WriteLine(Room.Directions);
+                Console.Write(Room.Directions);
+                Console.WriteLine("E - Search the room\nI - Open inventory\n");
             } else {
                 Console.WriteLine("\n" + Room.GetFrontMonster().ReturnMonsterFightText());
             }
