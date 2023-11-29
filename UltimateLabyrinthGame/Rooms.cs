@@ -113,5 +113,14 @@ namespace UltimateLabyrinthGame
             ItemNotFoundText = _ItemNotFoundText;
             return this;
         }
+
+        public List<Monster> MonsterList = new List<Monster>();
+
+        public Room AddMonster(Monster monster) {
+            MonsterList.Add(monster);
+            monster.Room = this;
+
+            return this;
+        }
     }
 }

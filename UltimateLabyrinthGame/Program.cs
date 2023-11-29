@@ -56,6 +56,9 @@
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
                     break;
+                }else if (keypress.Key == ConsoleKey.T) {
+                    // Try to fight
+                    // TODO: Lägg till funktioner här
                 }
             }
             while (true);
