@@ -16,13 +16,11 @@ namespace UltimateLabyrinthGame
                 " in a dark and damp room with only one door\n" +
                 " that is leading down a dark hallway.\n" +
                 " You need to find your way out!\n",
-                N: new Doorway(1){KeyName = "1"},
+                N: new Doorway(1),
                 E: null,
                 S: null,
                 W: null
-                )
-                .AddItem("skullkeyid", "Skull Key", "Ingrained skull on it", true, false)                       // Skull key should be found in room 3.
-                .SetRoomItemsDescription("There seems to be something on the floor...\n", "The item you earlier found on the floor is now gone.\n"),
+                ),                      
             new Room(1, "The Labyrinth", "Dark Hallway\n" +
                 " The darkness consumes your vision as\n" +
                 " you push further into the hallway.\n" +
@@ -50,22 +48,24 @@ namespace UltimateLabyrinthGame
                 S: new Doorway(6),
                 W: null
                 )
-                .AddItem("7","room7","Key to room 7",true,false),
+                .AddItem("7","Cat Key","Key to door with cat.",true,false)
+                .SetRoomItemsDescription("There is something that sticks out of the chest..\n", "The item you earlier found is now gone.\n"),
             new Room(3,"The Labyrinth", "The Armory\n" +
                 " All along the walls are scraps of metal that\n" +
                 " seem to have been armor, a few decades ago.\n" +
-                " At the back of the room there is an armor stand with a greatsword.\n" +
+                " At the back of the room there is an armor stand with a greatsword and a halfbroken chest.\n" +
                 " The sword is a little blunt but usable still.\n",         // ToDo - Add sword in this room.
                 N: null,
                 E: null,
                 S: new Doorway(4),
                 W: null
                 )
-                .AddItem("2", "room2", "Key to room 2", true, false),
+                .AddItem("2", "Skull Key", "Key to room with skull on door", true, false)
+                .SetRoomItemsDescription("There seems to be something next to the broken chest...\n", "The item you earlier found is now gone.\n"),
             new Room(4, "The Labyrinth", "The Bridge\n" +
                 " The floor in this room is just a dark abyss aside from\n" +
                 " the narrow stone pathway that is covered in wet moss.\n" +
-                " But you see a door at the end of the pathway.\n" +
+                " But you see a door at the end of the pathway with a shield on it.\n" +
                 " Watch your step so you dont fall...\n",
                 N: null,
                 E: new Doorway(3){KeyName = "3"},
@@ -92,7 +92,8 @@ namespace UltimateLabyrinthGame
                 S: new Doorway(5),
                 W: new Doorway(2){KeyName = "2"}
                 )
-                .AddItem("3", "room3", "Key to room 3", true, false),
+                .AddItem("3", "Shield Key", "Key to door with a shield.", true, false)
+                .SetRoomItemsDescription("You see something crammed between two books...\n", "The item you earlier found is now gone.\n"),
             new Room(7, "The Labyrinth", "The Cat Room\n" +
                 " The floor of this room is a shallow pit filled with angry kittens!\n" +
                 " You have to step down into the pit to get across.\n" +
@@ -127,15 +128,14 @@ namespace UltimateLabyrinthGame
              new Room(10, "The Labyrinth", "The Nasty Room\n" +
                 " This room.. is slimy, smelly and disgusting.\n" +
                 " Every surface of this room made of fleshy material,\n" +
-                " and worst of all, it is pulsating... Like its alive.\n" +
-                " You think you see something glistening underneath\n" +
-                " some slime in a corner... You're gonna have to dig it out.\n",
+                " and worst of all, it is pulsating... Like its alive.\n",
                 N: null,
                 E: new Doorway(7),
                 S: null,
                 W: null
                 )
-                .AddItem("9", "room9", "Key to room 9", true, false),
+                .AddItem("9", "Tree Key", "Key to door with tree.", true, false)
+                .SetRoomItemsDescription("You think you see something glistening underneath some slime in a corner... You're gonna have to dig it out.\n", "The item you earlier found is now gone.\n")
 
         };
     }
