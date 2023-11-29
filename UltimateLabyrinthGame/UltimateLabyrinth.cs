@@ -48,6 +48,8 @@ namespace UltimateLabyrinthGame
                 S: new Doorway(6),
                 W: null
                 )
+                .AddMonster(Monster.AllMonstersList[0])
+                .AddItem("7","room7","Key to room 7",true,false),
                 .AddItem("7","Cat Key","Key to door with cat.",true,false)
                 .SetRoomItemsDescription("There is something that sticks out of the chest..\n", "The item you earlier found is now gone.\n"),
             new Room(3,"The Labyrinth", "The Armory\n" +
