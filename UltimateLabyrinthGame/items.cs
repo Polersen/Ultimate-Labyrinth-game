@@ -12,7 +12,17 @@ namespace UltimateLabyrinthGame
         "18267", "27435","77689"};
 
     }
-    
+
+    public static class WeaponItemList
+    {
+        public static List<Items> Weapons = new List<Items>()
+        {
+            new Items("mega sword", "Mega Sword", "The biggest sword you have ever seen", false, true),
+            new Items("spray bottle", "Water Spray Bottle", "A Normal Spray bottle used for cleaning", false, true),
+            new Items("fire sword", "Fire Sword", "Sword Engulfed In Flames", false, true)
+        };
+    }
+
     public class Items
     {
         public string itemID {  get; private set; }
