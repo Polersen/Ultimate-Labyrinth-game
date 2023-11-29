@@ -49,6 +49,13 @@
                 {
                     PrintInventory();
                 }
+                else if (keypress.Key == ConsoleKey.R)
+                {
+                    if (Doorway.GetRoomFromId(2) == player.CurrentRoom) {
+
+                        player.GoToRoom(UltimateLabyrinth.description[5]);
+                    }
+                }
                 else if (keypress.Key == ConsoleKey.H)
                 {
                     Help();

@@ -78,9 +78,9 @@ namespace UltimateLabyrinthGame
                 " to the brim with books and junk.\n\n" +
                 " Maybe there is something useful in this room...",     // ToDo - Add key in this room (Opens door to 3.)
                 N: null,
-                E: new Doorway(5),
-                S: new Doorway(2),
-                W: null
+                E: null,
+                S: new Doorway(5),
+                W: new Doorway(2)
                 ),
             new Room(7, "The Labyrinth", "The Cat Room\n" +
                 " The floor of this room is a shallow pit filled with angry kittens!\n" +
