@@ -20,6 +20,8 @@
             MovementLoop();
         }
 
+        public static bool IsRunning = true;
+
         public static void MovementLoop()
         {
             do
@@ -65,7 +67,8 @@
                 }
                 else if (keypress.Key == ConsoleKey.Escape)
                 {
-                    break;
+                    Console.WriteLine("Goodbye!");
+                    IsRunning = false;
                 }else if (keypress.Key == ConsoleKey.T) {
                     // Try to fight
                     Monster monster = player.CurrentRoom.GetFrontMonster();
@@ -74,7 +77,7 @@
                     }
                 }
             }
-            while (true);
+            while (IsRunning);
 
             static void PrintInventory()
             {

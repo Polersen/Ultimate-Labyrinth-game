@@ -48,7 +48,8 @@ namespace UltimateLabyrinthGame {
         }
 
         public void Die() {
-            Console.WriteLine("You died. (TODO)");
+            Console.WriteLine("You died! Better luck next time.");
+            Program.IsRunning = false;
         }
     }
 }
