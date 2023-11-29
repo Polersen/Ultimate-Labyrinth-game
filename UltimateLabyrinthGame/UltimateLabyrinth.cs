@@ -30,16 +30,8 @@ namespace UltimateLabyrinthGame
                 E: null,
                 S: new Doorway(0),
                 W: null
-                )
-                .AddMonster(
-                    new Monster("Tiny Astrid", "A ferocious beast stands in the middle of the room. She is standing on your keyboard. God damn! Better slay it now before it causes any danger to the rest of the kingdom.", "2")
-                    .SetDroppedItem(new Items("catdagger", "Cat Dagger", "It's a precious little dagger only known to be dropped by cats.", false, true))
-                )
-                .AddMonster(
-                    new Monster("Tinier Astrid", "No way! It's mini-Astrid! No way!", "2")
-                )
-            , //TODO: Remove this fierce testing beast.
-            new Room(2,"The Labyrinth", "Scary Room\n" +                    // ToDo - Add monster in this room
+                ),
+            new Room(2,"The Labyrinth", "Scary Room\n" +
                 " AAH! A monster lashes out at you when you enter!\n" +
                 " It doesnt quite reach you. It seems to be chained\n" +
                 " to the back wall, there is a chest in the corner.\n",
@@ -49,7 +41,7 @@ namespace UltimateLabyrinthGame
                 W: null
                 )
                 .AddMonster(Monster.AllMonstersList[0])
-                .AddItem("7","room7","Key to room 7",true,false),
+                .AddItem("7","room7","Key to room 7",true,false)
                 .AddItem("7","Cat Key","Key to door with cat.",true,false)
                 .SetRoomItemsDescription("There is something that sticks out of the chest..\n", "The item you earlier found is now gone.\n"),
             new Room(3,"The Labyrinth", "The Armory\n" +
