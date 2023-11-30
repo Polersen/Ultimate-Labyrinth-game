@@ -54,7 +54,7 @@ namespace UltimateLabyrinthGame
                 W: null
                 )
                 .AddItem("2", "Skull Key", "Key to room with skull on door", true, false)
-                .AddItem("Giant fork", "Giant fork", "Fork made to make spin attack ", false, true)
+                .AddItem("Fork", "Giant fork", "Fork made to make spin attack ", false, true)
                 .SetRoomItemsDescription("There seems to be something next to the broken chest...\n", "The item you earlier found is now gone.\n"),
             new Room(4, "The Labyrinth", "The Bridge\n" +
                 " The floor in this room is just a dark abyss aside from\n" +
