@@ -15,7 +15,8 @@ namespace UltimateLabyrinthGame
                 " You fell down a hole and find yourself\n" +
                 " in a dark and damp room with only one door\n" +
                 " that is leading down a dark hallway.\n" +
-                " You need to find your way out!\n",
+                " You need to find your way out!" +
+                " Press H for Help.\n",
                 N: new Doorway(1),
                 E: null,
                 S: null,
