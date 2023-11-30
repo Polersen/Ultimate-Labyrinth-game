@@ -1,9 +1,6 @@
 ﻿namespace UltimateLabyrinthGame
 {
-
-
-    
-
+     
     internal class Program
     {
 
@@ -13,9 +10,6 @@
         {
             player = new Player();
             player.GoToRoom(UltimateLabyrinth.description[0]);
-
-            /*player.inventory.Add(new Items("2", "Sword", "Big ass sword", false, true));
-            player.inventory.Add(new Items("1", "Key", "Ingrained skull on it", true, false));*/
 
             MovementLoop();
         }
@@ -86,11 +80,11 @@
                 {
                     if (item.isKey == true)
                     {
-                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Key");
+                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}");
                     }
                     else if (item.isWeapon == true)
                     {
-                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}    Type: Weapon");
+                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}");
                     }
                 }
             }
@@ -107,7 +101,6 @@
                     "  I - Open inventory\n" +
                     "  R - Run away\n" +
                     "  T - Try to fight\n" +
-                    "  G - Glare\n" +
                     "  H - Help\n" +
                     "  Esc - End program\n");
             }

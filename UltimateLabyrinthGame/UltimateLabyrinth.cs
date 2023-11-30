@@ -35,7 +35,7 @@ namespace UltimateLabyrinthGame
                 " AAH! A monster lashes out at you when you enter!\n" +
                 " It doesnt quite reach you. It seems to be chained\n" +
                 " to the back wall, there is a chest in the corner.\n",
-                N: null,                                                    // ToDo - Add chest in this room (Ooooh gold or whatever!)
+                N: null,                                                    
                 E: null,
                 S: new Doorway(6),
                 W: null
@@ -111,21 +111,21 @@ namespace UltimateLabyrinthGame
                 S: null,
                 W: new Doorway(7)
                 ),
-            new Room(9, "The Labyrinth", "The End?\n" +
+            new Room(9, "The Labyrinth", "The End\n" +
                 " Steps lead up into the warming light of the sun!\n" +
                 " Free at last!\n",
                 N: null,
                 E: null,
-                S: null,
-                W: new Doorway(8)
+                S: new Doorway(8),
+                W: null
                 ),
              new Room(10, "The Labyrinth", "The Nasty Room\n" +
                 " This room.. is slimy, smelly and disgusting.\n" +
                 " Every surface of this room made of fleshy material,\n" +
                 " and worst of all, it is pulsating... Like its alive.\n",
                 N: null,
-                E: new Doorway(7),
-                S: null,
+                E: null,
+                S: new Doorway(7),
                 W: null
                 )
                 .AddItem("9", "Tree Key", "Key to door with tree.", true, false)

@@ -33,8 +33,8 @@ namespace UltimateLabyrinthGame
             {
                 string dir = "There are doors to your:\n";
                 if(north != null) dir += "  Front - North\n";
-                if (east != null) dir += "  Right - East\n";
                 if (south != null) dir += "  Back - South\n";
+                if (east != null) dir += "  Right - East\n";
                 if (west != null) dir += "  Left - West\n";
                 return dir;
             }
@@ -61,6 +61,8 @@ namespace UltimateLabyrinthGame
                 for (int i = 0; i < ItemsList.Count; i++)
                 {
                     Console.WriteLine($"{i + 1}: {ItemsList[i].Name}");
+                    Console.WriteLine();
+                    Console.WriteLine("Press the number of the item you want to pick up.");
                 }
 
                 Console.WriteLine(pickUpmsg);
