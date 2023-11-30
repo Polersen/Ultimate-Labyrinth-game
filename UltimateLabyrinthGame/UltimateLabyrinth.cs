@@ -80,8 +80,7 @@ namespace UltimateLabyrinthGame
                 " This room has a big grey stone door to the left,\n" +
                 " there is a skull above the door that looks ominous.\n" +
                 " Every other wall is all bookshelves, stacked\n" +
-                " to the brim with books and junk.\n\n" +
-                " Maybe there is something useful in this room...",
+                " to the brim with books and junk.\n",
                 N: null,
                 E: null,
                 S: new Doorway(5),
