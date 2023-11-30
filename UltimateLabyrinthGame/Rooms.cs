@@ -57,12 +57,15 @@ namespace UltimateLabyrinthGame
                 Console.Clear();
 
                 Console.WriteLine("Press Q to go back\n");
-                Console.WriteLine("Press the number of the item you want to pick up.");
 
-
-                for (int i = 0; i < ItemsList.Count; i++)
+                if (ItemsList.Count != 0) 
                 {
-                    Console.WriteLine($"{i + 1}: {ItemsList[i].Name}");
+                    Console.WriteLine("Press the number of the item you want to pick up.");
+                    Console.WriteLine();
+                    for (int i = 0; i < ItemsList.Count; i++)
+                    {
+                        Console.WriteLine($"{i + 1}: {ItemsList[i].Name}");
+                    }
                 }
 
                 Console.WriteLine(pickUpmsg);
