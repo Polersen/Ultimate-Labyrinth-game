@@ -108,11 +108,14 @@ namespace UltimateLabyrinthGame
         }
 
         public string BasicRoomText() { // Rätt så lat kod egentligen
+            string NORMAL = Console.IsOutputRedirected ? "" : "\x1b[39m";
+            string YELLOW = Console.IsOutputRedirected ? "" : "\x1b[93m";
+
             string ret = $"{title}:\n" +
                 $"{text}\n";
             if (ItemsList.Count > 0) {
                 if (ItemFoundText != "") {
-                    ret += ItemFoundText + "\n";
+                    ret += YELLOW + ItemFoundText + NORMAL + "\n";
                 }
             } else {
                 if (ItemNotFoundText != "") {
