@@ -82,9 +82,12 @@ namespace UltimateLabyrinthGame
         }
 
         public string ReturnMonsterFightText() {
+            string NORMAL = Console.IsOutputRedirected ? "" : "\x1b[39m";
+            string RED = Console.IsOutputRedirected ? "" : "\x1b[91m";
+
             string ret = "";
 
-            ret += Name + ":\n";
+            ret += RED + Name + NORMAL + ":\n";
             ret += Description + "\n";
             ret += "\n";
             ret += $"R - Run away from {Name}\n";
