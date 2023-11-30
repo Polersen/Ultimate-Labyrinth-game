@@ -75,18 +75,22 @@
 
             static void PrintInventory()
             {
-                Console.WriteLine("Inventory:");
-                foreach (var item in player.inventory)
+                if (player.inventory.Count != 0)
                 {
-                    if (item.isKey == true)
+                    Console.WriteLine("Inventory:");
+                    foreach (var item in player.inventory)
                     {
-                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}");
-                    }
-                    else if (item.isWeapon == true)
-                    {
-                        Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}");
+                        if (item.isKey == true)
+                        {
+                            Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}");
+                        }
+                        else if (item.isWeapon == true)
+                        {
+                            Console.WriteLine($"Item: {item.Name}   Description: {item.Desc}");
+                        }
                     }
                 }
+                else Console.WriteLine("Your pockets are empty!");
             }
 
             static void Help()
