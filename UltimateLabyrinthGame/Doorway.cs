@@ -13,6 +13,7 @@ namespace UltimateLabyrinthGame {
         // Messages
         public string DoorDescription = "A regular door.";
         public string CantEnterMessage = "This door is locked, you dummy!";
+        public string FirstOpenMessage = "The key you used fit perfectly and the door slid open!";
 
         public Doorway(int destination_index) {
             Destination = destination_index;
@@ -34,6 +35,8 @@ namespace UltimateLabyrinthGame {
             if (CanEnter()) {
                 Room room = GetRoomFromId(Destination);
                 Program.player.GoToRoom(room);
+                if(KeyName != "")
+                    Console.WriteLine(FirstOpenMessage);
             } else {
                 Console.WriteLine(CantEnterMessage);
             }
